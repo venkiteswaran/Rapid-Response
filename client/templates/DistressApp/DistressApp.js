@@ -1,8 +1,22 @@
 Template.DistressApp.helpers({
+  'distressCallMainView'() {
+    return Session.get("distressCallView") === true;
+  },
+});
+
+Template.DistressApp.helpers({
+  'customLocationOptionSelected'() {
+    return Session.get("customLocationOptionSelected") === true;
+  },
+});
+
+Template.DistressApp.helpers({
   'distressCallSent'() {
     return Session.get("distressCallSent") === true;
   },
 });
+
+
 
 Tracker.autorun(function (computation) {
   var userGeoLocation = new ReactiveVar(null);
@@ -19,12 +33,6 @@ Template.DistressApp.onRendered(() => {
   console.log("hello there!");
 });
 
-
-Template.DistressApp.helpers({
-  'customLocationSelected'() {
-    return Session.get("customLocationSelected") === true;
-  },
-});
 
 Meteor.startup(() => {
   GoogleMaps.load();

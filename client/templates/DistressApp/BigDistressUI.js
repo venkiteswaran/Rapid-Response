@@ -18,7 +18,7 @@ Template.BigDistressUI.events({
     //   alert(`There's a problem with your Geolocation! Error we got: ${Geolocation.error()}`);
     // }
 
-    Session.set("customLocationSelected", true);
+    Session.set("customLocationOptionSelected", true);
   }
 })
 
