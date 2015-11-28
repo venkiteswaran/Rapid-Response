@@ -14,3 +14,7 @@ Tracker.autorun(function (computation) {
     computation.stop();
   }
 });
+
+Template.DistressApp.onRendered(() => {
+  console.log("hello there!");
+});
