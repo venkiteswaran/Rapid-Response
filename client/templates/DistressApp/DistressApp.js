@@ -18,3 +18,14 @@ Tracker.autorun(function (computation) {
 Template.DistressApp.onRendered(() => {
   console.log("hello there!");
 });
+
+
+Template.DistressApp.helpers({
+  'customLocationSelected'() {
+    return Session.get("customLocationSelected") === true;
+  },
+});
+
+Meteor.startup(() => {
+  GoogleMaps.load();
+})
