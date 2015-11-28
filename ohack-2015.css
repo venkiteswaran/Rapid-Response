@@ -1,1 +1,4 @@
 /* CSS declarations go here */
+.big-distress-ui #trigger-button {
+  margin-top: 3em;
+}
