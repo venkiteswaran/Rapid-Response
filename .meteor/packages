@@ -21,3 +21,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 twbs:bootstrap
 mdg:geolocation
 reactive-var
+kadira:flow-router
+kadira:blaze-layout

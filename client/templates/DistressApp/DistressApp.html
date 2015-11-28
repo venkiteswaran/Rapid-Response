@@ -1,0 +1,14 @@
+<template name="DistressApp">
+  <div class="container">
+    <div class="col-xs-12 text-center">
+      <h1>Distress Call</h1>
+      <h4>by Rapid Response</h4>
+    </div>
+
+    {{#unless distressCallSent}}
+      {{> BigDistressUI}}
+    {{else}}
+      {{> DistressResponseMessage}}
+    {{/unless}}
+  </div>
+</template>
