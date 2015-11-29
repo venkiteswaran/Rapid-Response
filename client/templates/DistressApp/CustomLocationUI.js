@@ -1,3 +1,4 @@
+var locCurrent;
 
 Template.CustomLocationUI.events({
   'click #custom-location-link'(ev) {
@@ -14,12 +15,11 @@ Template.CustomLocationUI.events({
   
   'click #select-location-button'(ev) {
     ev.preventDefault();
+    Session.set("distressCallCoords", locCurrent);
 
     Session.set("customLocationOptionSelected", false);
    
   }
-
-
 
   })
 
@@ -52,14 +52,8 @@ Template.CustomLocationUI.onCreated(function() {
 
     // This listener lets us drag markers on the map and update their corresponding document.
     google.maps.event.addListener(marker, 'dragend', function(event) {
-      var locCurrent = {lat: event.latLng.lat(), lng: event.latLng.lng()};
-      Session.set("distressCallCoords", locCurrent);
+      locCurrent = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+      
     });
   });
 });
-
-
-
-
-
-
